@@ -11,7 +11,7 @@
   flex-direction: column;
 }
 #dateSelector {
-  outline: 1px solid purple;
+  
   display: flex;
   justify-content: flex-end;
 }
@@ -20,7 +20,7 @@
   margin: 0;*/
 }
 .timeInput {
-  outline: 1px solid red;
+  
   width: 100%;
 
   align-items: center;
