@@ -1,1 +1,43 @@
+.editDialog {
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;*/
+}
 
+.timeSelector {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+#dateSelector {
+  outline: 1px solid purple;
+  display: flex;
+  justify-content: flex-end;
+}
+.timeInput > input {
+  height: 2vh;
+  margin: 0;
+}
+.timeInput {
+  outline: 1px solid red;
+  width: 100%;
+
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+p {
+  font-size: 0.8em;
+  padding: 0.3em;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .mat-form-field {
+    width: 20%;
+  }
+::ng-deep .mat-form-field-underline {
+  height: 0 !important ;
+}
+}

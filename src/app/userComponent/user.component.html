@@ -1,32 +1,82 @@
-<div class="ok">
-  <form [formGroup]="boh">
-    <!--selettore della data-->
-    <mat-form-field appearance="fill">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="datepicker" formControlName="buh" />
-      <mat-hint>MM/DD/YYYY</mat-hint>
+<div class="editDialog">
+  <h1>
+    Editing day
+    <!--{{index+1}}-->
+  </h1>
+  <div class="timeSelector">
+    <form [formGroup]="editForm" class="timeSelector">
+      <!--selettore della data-->
+      <div id="dateSelector">
+        <div class="desktop" *ngIf="appear">
+        <mat-form-field  appearance="fill">
+        <input
+          matInput
+          [matDatepicker]="datepicker"
+          formControlName="dateInput"
+          
+        />
+      </mat-form-field>
       <mat-datepicker-toggle
-        matSuffix
-        [for]="datepicker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #datepicker>
-        <mat-datepicker-actions>
-          <button mat-button matDatepickerCancel>Cancel</button>
-          <button
-            mat-raised-button
-            color="primary"
-            matDatepickerApply
-            (click)="calcolagiorno()"
-          >
-            Apply
-          </button>
-        </mat-datepicker-actions>
-      </mat-datepicker>
-    </mat-form-field>
+          matSuffix
+          [for]="datepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button
+              mat-raised-button
+              color="primary"
+              matDatepickerApply
+              (click)="calcolagiorno()"
+            >
+              Apply
+            </button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+        </div>
+        <div class="mobile" *ngIf="!appear">
 
-    <input type="date" formControlName="beh" />
-    <input type="time" formControlName="bah" />
-    <input type="time" />
-  </form>
-  <button mat-button mat-dialog-close>No</button>
+
+        <mat-form-field  >
+          
+          <input
+            matInput
+            [matDatepicker]="datepicker"
+            formControlName="dateInput"
+            
+          />
+        </mat-form-field>
+        <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button
+                mat-raised-button
+                color="primary"
+                matDatepickerApply
+                (click)="calcolagiorno()"
+              >
+                Apply
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </div>
+      </div>
+      <!--selettore dell'ora-->
+      <div class="timeInput">
+        <p>From</p>
+        <input type="time" formControlName="timeStart" />
+        <p>To</p>
+        <input type="time" formControlName="timeEnd" />
+      </div>
+    </form>
+  </div>
+
+  <div class="functionButton">
+    <button type="button" mat-button mat-dialog-clos>cancel</button>
+    <button mat-button mat-dialog-clos>save</button>
+  </div>
 </div>

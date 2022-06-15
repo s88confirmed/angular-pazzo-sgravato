@@ -16,7 +16,10 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   /*metodo per  */
   openDialog(/*parametri sno i tempi */) {
-    let dialogRef = this.dialog.open(UserComponent, {});
+    let dialogRef = this.dialog.open(UserComponent, {
+      width:'50vw',
+      height:'50vh',
+    });
   }
   closeDialog() {
     
