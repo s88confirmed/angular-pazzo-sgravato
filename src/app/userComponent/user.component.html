@@ -8,45 +8,43 @@
       <!--selettore della data-->
       <div id="dateSelector">
         <div class="desktop" *ngIf="appear">
-        <mat-form-field  appearance="fill">
-        <input
-          matInput
-          [matDatepicker]="datepicker"
-          formControlName="dateInput"
-          
-        />
-      </mat-form-field>
-      <mat-datepicker-toggle
-          matSuffix
-          [for]="datepicker"
-        ></mat-datepicker-toggle>
-        <mat-datepicker #datepicker>
-          <mat-datepicker-actions>
-            <button mat-button matDatepickerCancel>Cancel</button>
-            <button
-              mat-raised-button
-              color="primary"
-              matDatepickerApply
-              (click)="calcolagiorno()"
-            >
-              Apply
-            </button>
-          </mat-datepicker-actions>
-        </mat-datepicker>
+          <mat-form-field appearance="outline">
+            <mat-label>inserisci papa</mat-label>
+
+            <input
+              matInput
+              [matDatepicker]="datepicker"
+              formControlName="dateInput"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="datepicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  matDatepickerApply
+                  (click)="calcolagiorno()"
+                >
+                  Apply
+                </button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
         </div>
         <div class="mobile" *ngIf="!appear">
-
-
-        <mat-form-field  >
-          
-          <input
-            matInput
-            [matDatepicker]="datepicker"
-            formControlName="dateInput"
-            
-          />
-        </mat-form-field>
-        <mat-datepicker-toggle
+          <div class="hoverDate">
+            <input
+              matInput
+              [matDatepicker]="datepicker"
+              formControlName="dateInput"
+              style="display:none"
+            />
+          </div>
+          <mat-datepicker-toggle
             matSuffix
             [for]="datepicker"
           ></mat-datepicker-toggle>

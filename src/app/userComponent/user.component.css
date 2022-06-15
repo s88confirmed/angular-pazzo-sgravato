@@ -16,8 +16,8 @@
   justify-content: flex-end;
 }
 .timeInput > input {
-  height: 2vh;
-  margin: 0;
+  /*height: 2vh;
+  margin: 0;*/
 }
 .timeInput {
   outline: 1px solid red;
@@ -31,13 +31,19 @@ p {
   font-size: 0.8em;
   padding: 0.3em;
   margin: 0;
+  padding: 0;
+}
+::ng-deep input{
+  padding: 0!important;
 }
 
 @media (max-width: 600px) {
   .mat-form-field {
     width: 20%;
   }
-::ng-deep .mat-form-field-underline {
-  height: 0 !important ;
-}
+  ::ng-deep .mat-form-field-underline {
+    height: 0 !important ;
+  } 
+  
+  
 }
