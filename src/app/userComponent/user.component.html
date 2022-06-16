@@ -1,21 +1,29 @@
 <div class="editDialog">
-  <h1>
-    Editing day
-    <!--{{index+1}}-->
-  </h1>
+  
   <div class="timeSelector">
+  
     <form [formGroup]="editForm" class="timeSelector">
+      <div class="header">
+        <div class="title">
+        <h2>Edit day:</h2> <input
+            type="text"
+            id="name"
+            name="name"
+            requiredminlength="4"
+            maxlength="8"
+            size="10"
+            formControlName="titleInput"
+          />
+        </div>
+      </div>
       <!--selettore della data-->
+      <div id="time">
       <div id="dateSelector">
         <div class="desktop" *ngIf="appear">
           <mat-form-field appearance="outline">
             <mat-label>inserisci papa</mat-label>
 
-            <input
-              matInput
-              [matDatepicker]="datepicker"
-              formControlName="dateInput"
-            />
+            <input matInput [matDatepicker]="datepicker" formControlName="dateInput"/>
             <mat-datepicker-toggle
               matSuffix
               [for]="datepicker"
@@ -35,7 +43,8 @@
             </mat-datepicker>
           </mat-form-field>
         </div>
-        <div class="mobile" *ngIf="!appear">
+        <mat-form-field class="mobile" *ngIf="!appear">
+        
           <div class="hoverDate">
             <input
               matInput
@@ -44,6 +53,7 @@
               style="display:none"
             />
           </div>
+          
           <mat-datepicker-toggle
             matSuffix
             [for]="datepicker"
@@ -61,19 +71,20 @@
               </button>
             </mat-datepicker-actions>
           </mat-datepicker>
-        </div>
+        
+        </mat-form-field>
       </div>
 
-      <div class="title">
-      <input type="text" id="name" name="name" required
-      minlength="4" maxlength="8" size="10">
-      </div>
       <!--selettore dell'ora-->
       <div class="timeInput">
         <p>From</p>
         <input type="time" formControlName="timeStart" />
         <p>To</p>
         <input type="time" formControlName="timeEnd" />
+      </div>
+    </div>
+      <div class="textArea">
+        <textarea></textarea>
       </div>
     </form>
   </div>

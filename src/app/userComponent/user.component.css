@@ -1,17 +1,27 @@
 .editDialog {
-  /*display: flex;
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100%;
+}
+.title {
+  display: flex;
+
   justify-content: center;
-  align-items: flex-end;*/
+  align-items: center;
+}
+.tidtle > input {
+  width: 50%;
 }
 
 .timeSelector {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
 }
 #dateSelector {
-  
   display: flex;
   justify-content: flex-end;
 }
@@ -20,11 +30,11 @@
   margin: 0;*/
 }
 .timeInput {
-  
   width: 100%;
 
   align-items: center;
   display: flex;
+
   justify-content: flex-end;
 }
 p {
@@ -33,17 +43,152 @@ p {
   margin: 0;
   padding: 0;
 }
-::ng-deep input{
-  padding: 0!important;
+::ng-deep input {
+  padding: 0 !important;
 }
 
-@media (max-width: 600px) {
+/*mobile*/
+
+@media (max-width: 599.98px) {
+  .editDialog {
+    display: flex;
+    flex-direction: column;
+  }
   .mat-form-field {
     width: 20%;
   }
   ::ng-deep .mat-form-field-underline {
     height: 0 !important ;
-  } 
-  
+  }
+
+  .textArea {
+    width: 100%;
+    height: 50%;
+  }
+  .textArea {
+    width: 100%;
+    height: 17vh;
+
+    padding: 1vh 0;
+  }
+  .textArea > textarea {
+    width: 99%;
+    height: 15vh;
+    resize: none;
+  }
+
+  .timeSelector {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    outline: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    padding: 1vh;
+  }
+  .timeInput {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959.98px) {
+  .editDialog {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    outline: 1px solid red;
+  }
+  .timeSelector {
+    display: flex;
+    height: 100%;
+
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #time {
+    outline: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .textArea {
+    width: 100%;
+    height: 17vh;
+
+    padding: 1vh 0;
+  }
+  .textArea > textarea {
+    width: 99%;
+    height: 15vh;
+    resize: none;
+  }
+  .timeInput {
+    outline: 1px solid red;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+  }
+  .timeInput > p {
+    padding: 0.5em;
+  }
+  ::ng-deep .mat-form-field-underline {
+    height: 0 !important ;
+  }
+  .mobile>input{display: none;}
+
+  ::ng-deep .mat-form-field-infix{
+    display: none!important;
+  }
   
 }
+@media (min-width: 960px) {
+  .editDialog {
+    display: flex;
+    flex-direction: column;
+  }
+  .timeSelector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  h2 {
+    padding: 1vh;
+  }
+  #time {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .textArea {
+    width: 100%;
+    height: 17vh;
+
+    padding: 1vh 0;
+  }
+  .textArea > textarea {
+    width: 99%;
+    height: 15vh;
+    resize: none;
+  }
+}
+
+  
+

@@ -12,10 +12,14 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class UserComponent implements OnInit {
   selectedDate: Date;
   appear:boolean=false;
+
+  
+
   editForm = new FormGroup({
     timeStart: new FormControl(''),
     timeEnd: new FormControl(''),
     dateInput: new FormControl(new Date()),
+    titleInput:new FormControl(''),
   });
 
   constructor(public datePipe: DatePipe, private formBuilder: FormBuilder, private breakpointObserver: BreakpointObserver) {
